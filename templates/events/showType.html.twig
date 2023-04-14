@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Events{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/styles.css")}}"
+{% endblock %}
+
+{% block body %}
+    <h1 class="ms-4"> {{ event.eventName }}</h1>
+
+    <div class= = "container">
+        <div class="card ms-4" style="width: 22rem;">
+            <img src=".." alt="Girl in a jacket" width="auto" height="300">
+            <div class="card-body" style="width: auto;">
+            <p class="card-header ev_desc"></p>
+                <ul class="list-group list-group-flush w-100">
+                    <li class="list-group-item"><b>Title</b>:</li>
+                    <li class="list-group-item"><b>Date</b>: : ''</li>
+                    <li class="list-group-item"><b>max. Capacity</b>: </li>
+                    <li class="list-group-item"><b>email</b>:<a href=""></a></li>
+                    <li class="list-group-item"><b>Phone</b>: </li>
+                    <li class="list-group-item"><b>adress</b>: </li>
+                    <li class="list-group-item"><b>Homepage</b>: <a href=""></a></li>
+                    <li class="list-group-item"><b>Type</b>: </li>
+                    <hr>
+                </ul>
+                <a class = "ms-4 btn btn-primary btn-sm" href="">back to list</a>
+                    <a class = "ms-4 btn btn-warning btn-sm" href="">edit</a>
+                    <a class= "ms-4 btn btn-danger btn-sm"> {{ include('events/_delete_form.html.twig') }}</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

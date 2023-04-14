@@ -2,3 +2,21 @@
     font-style: italic;
     font-size: large;
 }
+
+.textcur{
+    font-style:italic;
+    text-decoration: none;
+}
+
+.wave{
+    color:black;
+}
+
+.bg{
+    background-image: url(../images/veranstaltungen-wien.jpg);
+    /* opacity:0.5; */
+}
+.bxd{
+    background-image: url(../images/xsportsworld1.jpg.pagespeed.ic.cziZMIKA4C.jpg);
+    /* opacity:0.5; */
+}

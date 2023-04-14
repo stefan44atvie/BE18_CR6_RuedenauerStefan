@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Events;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\BrowserKit\Response;
 
 /**
  * @extends ServiceEntityRepository<Events>
@@ -38,7 +39,7 @@ class EventsRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
+   
 //    /**
 //     * @return Events[] Returns an array of Events objects
 //     */

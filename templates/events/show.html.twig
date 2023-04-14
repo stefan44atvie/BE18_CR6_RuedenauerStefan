@@ -16,7 +16,7 @@
             <p class="card-header ev_desc">{{ event.eventDescription }}</p>
                 <ul class="list-group list-group-flush w-100">
                     <li class="list-group-item"><b>Title</b>: {{ event.eventName }}</li>
-                    <li class="list-group-item"><b>Date</b>: {{ event.eventDatetime ? event.eventDatetime|date('Y-m-d H:i:s') : '' }}</li>
+                    <li class="list-group-item"><b>Date</b>: {{ event.eventDatetime ? event.eventDatetime|date('F, d Y H:i') : '' }}</li>
                     <li class="list-group-item"><b>max. Capacity</b>: {{ event.eventCapacity }}</li>
                     <li class="list-group-item"><b>email</b>:<a href="mailto:{{ event.eventEmail }}">{{ event.eventEmail }}</a></li>
                     <li class="list-group-item"><b>Phone</b>: {{ event.eventPhone }}</li>

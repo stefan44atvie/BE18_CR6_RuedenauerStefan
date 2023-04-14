@@ -18,6 +18,7 @@ class EventsController extends AbstractController
     {
         return $this->render('events/index.html.twig', [
             'events' => $eventsRepository->findAll(),
+            // findBy(['event_type' => 'Soccer'])
         ]);
     }
 
@@ -77,12 +78,21 @@ class EventsController extends AbstractController
         return $this->redirectToRoute('app_events_index', [], Response::HTTP_SEE_OTHER);
     }
 
-    // #[Route('/soccer', name: 'app_events_soccer', methods: ['GET'])]
-    // public function soccer(EventsRepository $eventsRepository): Response
-    // {
-    //     return $this->render('events/soccer.html.twig', [
-    //         'events' => $eventsRepository->findBy(['event_type' => 'Soccer']),
-    //     ]);
-    // }
+    #[Route('/wk', name: 'app_events_Weinverk', methods: ['GET'])]
+    public function findWein(EventsRepository $eventsRepository): Response
+    {
+        return $this->render('events/wk.html.twig', [
+            'events' => $eventsRepository->findBy(['event_type' => 'Soccer']),
+            // findBy(['event_type' => 'Soccer'])
+        ]);
+    }
     
+    #[Route('/mynew', name: 'app_speisekarte')]
+    public function nonew(): Response
+    {
+        return $this->render('events/mynew.html.twig', [
+            // 'controller_name' => 'SpeisekarteController',
+        ]);
+    }
+
 }

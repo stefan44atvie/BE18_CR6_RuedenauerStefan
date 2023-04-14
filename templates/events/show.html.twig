@@ -2,54 +2,32 @@
 
 {% block title %}Events{% endblock %}
 
-{% block body %}
-    <h1>Events</h1>
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/styles.css")}}"
+{% endblock %}
 
-    <table class="table">
-        <tbody>
-           
-            <tr>
-                <th>Event's name</th>
-                <td>{{ event.eventName }}</td>
-            </tr>
-            <tr>
-                <th>Event date</th>
-                <td>{{ event.eventDatetime ? event.eventDatetime|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ event.eventDescription }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td><img src="{{ event.eventImage }}" alt="Girl in a jacket" width="300" height="300"></td>
-            </tr>
-            <tr>
-                <th>max Capacity</th>
-                <td>{{ event.eventCapacity }}</td>
-            </tr>
-            <tr>
-                <th>email</th>
-                <td>{{ event.eventEmail }}</td>
-            </tr>
-            <tr>
-                <th>Phone</th>
-                <td>{{ event.eventPhone }}</td>
-            </tr>
-            <tr>
-                <th>address</th>
-                <td>{{ event.eventAddress }}</td>
-            </tr>
-            <tr>
-                <th>Homepage</th>
-                <td>{{ event.eventUrl }}</td>
-            </tr>
-            <tr>
-                <th>Type</th>
-                <td>{{ event.eventType }}</td>
-            </tr>
-        </tbody>
-    </table>
+{% block body %}
+    <h1> {{ event.eventName }}</h1>
+
+    <div class="card" style="width: 18rem;">
+        <img src="{{ event.eventImage }}" alt="Girl in a jacket" width="300" height="300">
+        <div class="card-body">
+          <p class="card-text">{{ event.eventDescription }}</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Title</b>: {{ event.eventName }}</li>
+            <li class="list-group-item"><b>Date</b>: {{ event.eventDatetime ? event.eventDatetime|date('Y-m-d H:i:s') : '' }}</li>
+            <li class="list-group-item"><b>max. Capacity</b>: {{ event.eventCapacity }}</li>
+            <li class="list-group-item"><b>email</b>:<a href="mailto:{{ event.eventEmail }}">{{ event.eventEmail }}</a></li>
+            <li class="list-group-item"><b>Phone</b>: {{ event.eventPhone }}</li>
+            <li class="list-group-item"><b>adress</b>: {{ event.eventAddress }}</li>
+            <li class="list-group-item"><b>Homepage</b>: <a href="{{ event.eventUrl }}">{{ event.eventUrl }}</a></li>
+            <li class="list-group-item"><b>Type</b>: {{ event.eventType }}</li>
+
+          </ul>
+        </div>
+      </div>
+
+
 
     <a href="{{ path('app_events_index') }}">back to list</a>
 

@@ -2,6 +2,10 @@
 
 {% block title %}Events index{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset("css/styles.css")}}"
+{% endblock %}
+
 {% block body %}
     <h1>Events index</h1>
 
@@ -29,10 +33,10 @@
                 <td>{{ event.eventDescription }}</td>
                 <td><img src="{{ event.eventImage }}" alt="Girl in a jacket" width="100" height="100"></td>
                 <td>{{ event.eventCapacity }}</td>
-                <td>{{ event.eventEmail }}</td>
+                <td><a href="mailto:{{ event.eventEmail }}">{{ event.eventEmail }}</a></td>
                 <td>{{ event.eventPhone }}</td>
                 <td>{{ event.eventAddress }}</td>
-                <td>{{ event.eventUrl }}</td>
+                <td><a href="{{ event.eventUrl }}">{{ event.eventUrl }}</a></td>
                 <td>{{ event.eventType }}</td>
                 <td>
                     <a href="{{ path('app_events_show', {'id': event.id}) }}">show</a>

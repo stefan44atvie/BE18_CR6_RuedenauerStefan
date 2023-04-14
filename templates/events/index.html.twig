@@ -27,7 +27,7 @@
                 <td>{{ event.eventName }}</td>
                 <td>{{ event.eventDatetime ? event.eventDatetime|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.eventDescription }}</td>
-                <td>{{ event.eventImage }}</td>
+                <td><img src="{{ event.eventImage }}" alt="Girl in a jacket" width="100" height="100"></td>
                 <td>{{ event.eventCapacity }}</td>
                 <td>{{ event.eventEmail }}</td>
                 <td>{{ event.eventPhone }}</td>

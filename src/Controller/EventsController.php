@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/events')]
+#[Route('/')]
 class EventsController extends AbstractController
 {
     #[Route('/', name: 'app_events_index', methods: ['GET'])]

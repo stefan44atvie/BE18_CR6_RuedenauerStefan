@@ -8,24 +8,22 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Event_name</th>
-                <th>Event_datetime</th>
-                <th>Event_description</th>
-                <th>Event_image</th>
-                <th>Event_capacity</th>
-                <th>Event_email</th>
-                <th>Event_phone</th>
-                <th>Event_address</th>
-                <th>Event_url</th>
-                <th>Event_type</th>
+                <th>Name of Event</th>
+                <th>Date and starting time</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Max capoacity</th>
+                <th>email</th>
+                <th>Event's phone number</th>
+                <th>address</th>
+                <th>Homepage</th>
+                <th>Type</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for event in events %}
             <tr>
-                <td>{{ event.id }}</td>
                 <td>{{ event.eventName }}</td>
                 <td>{{ event.eventDatetime ? event.eventDatetime|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ event.eventDescription }}</td>

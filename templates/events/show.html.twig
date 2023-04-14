@@ -7,48 +7,45 @@
 
     <table class="table">
         <tbody>
+           
             <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
-            <tr>
-                <th>Event_name</th>
+                <th>Event's name</th>
                 <td>{{ event.eventName }}</td>
             </tr>
             <tr>
-                <th>Event_datetime</th>
+                <th>Event date</th>
                 <td>{{ event.eventDatetime ? event.eventDatetime|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
             <tr>
-                <th>Event_description</th>
+                <th>Description</th>
                 <td>{{ event.eventDescription }}</td>
             </tr>
             <tr>
-                <th>Event_image</th>
+                <th>Image</th>
                 <td>{{ event.eventImage }}</td>
             </tr>
             <tr>
-                <th>Event_capacity</th>
+                <th>max Capacity</th>
                 <td>{{ event.eventCapacity }}</td>
             </tr>
             <tr>
-                <th>Event_email</th>
+                <th>email</th>
                 <td>{{ event.eventEmail }}</td>
             </tr>
             <tr>
-                <th>Event_phone</th>
+                <th>Phone</th>
                 <td>{{ event.eventPhone }}</td>
             </tr>
             <tr>
-                <th>Event_address</th>
+                <th>address</th>
                 <td>{{ event.eventAddress }}</td>
             </tr>
             <tr>
-                <th>Event_url</th>
+                <th>Homepage</th>
                 <td>{{ event.eventUrl }}</td>
             </tr>
             <tr>
-                <th>Event_type</th>
+                <th>Type</th>
                 <td>{{ event.eventType }}</td>
             </tr>
         </tbody>

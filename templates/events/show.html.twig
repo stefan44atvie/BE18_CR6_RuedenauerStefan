@@ -10,11 +10,11 @@
     <h1 class="ms-4"> {{ event.eventName }}</h1>
 
     <div class= = "container">
-        <div class="card ms-4" style="width: 18rem;">
-            <img src="{{ event.eventImage }}" alt="Girl in a jacket" width="300" height="300">
-            <div class="card-body">
-            <p class="card-text">{{ event.eventDescription }}</p>
-                <ul class="list-group list-group-flush">
+        <div class="card ms-4" style="width: 22rem;">
+            <img src="{{ event.eventImage }}" alt="Girl in a jacket" width="auto" height="300">
+            <div class="card-body" style="width: auto;">
+            <p class="card-header ev_desc">{{ event.eventDescription }}</p>
+                <ul class="list-group list-group-flush w-100">
                     <li class="list-group-item"><b>Title</b>: {{ event.eventName }}</li>
                     <li class="list-group-item"><b>Date</b>: {{ event.eventDatetime ? event.eventDatetime|date('Y-m-d H:i:s') : '' }}</li>
                     <li class="list-group-item"><b>max. Capacity</b>: {{ event.eventCapacity }}</li>
@@ -23,16 +23,13 @@
                     <li class="list-group-item"><b>adress</b>: {{ event.eventAddress }}</li>
                     <li class="list-group-item"><b>Homepage</b>: <a href="{{ event.eventUrl }}">{{ event.eventUrl }}</a></li>
                     <li class="list-group-item"><b>Type</b>: {{ event.eventType }}</li>
-
+                    <hr>
                 </ul>
+                <a class = "ms-4 btn btn-primary btn-sm" href="{{ path('app_events_index') }}">back to list</a>
+                    <a class = "ms-4 btn btn-warning btn-sm" href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a>
+                    <a class= "ms-4 btn btn-danger btn-sm"> {{ include('events/_delete_form.html.twig') }}</a>
             </div>
         </div>
     </div>
 
-
-    <a class = "ms-3" href="{{ path('app_events_index') }}">back to list</a>
-
-    <a class = "ms-3" href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a>
-
-    {{ include('events/_delete_form.html.twig') }}
 {% endblock %}

@@ -72,7 +72,17 @@ class EventsController extends AbstractController
         if ($this->isCsrfTokenValid('delete'.$event->getId(), $request->request->get('_token'))) {
             $eventsRepository->remove($event, true);
         }
+        
 
         return $this->redirectToRoute('app_events_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    // #[Route('/soccer', name: 'app_events_soccer', methods: ['GET'])]
+    // public function soccer(EventsRepository $eventsRepository): Response
+    // {
+    //     return $this->render('events/soccer.html.twig', [
+    //         'events' => $eventsRepository->findBy(['event_type' => 'Soccer']),
+    //     ]);
+    // }
+    
 }

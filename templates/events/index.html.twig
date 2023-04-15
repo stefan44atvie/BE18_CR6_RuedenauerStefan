@@ -19,6 +19,8 @@
     </p>
 
 </div>
+
+{# ALL EVENTS #}
 <div class = "row row-cols-4">
     {% for event in events %}
     <div>    
@@ -32,6 +34,7 @@
 
                 </div>
             </div>
+            <div></div>>
     </div>
     {% else %}
         <tr>
@@ -42,6 +45,7 @@
 
 <br>
 
+{# Events Weinverkostung #}
 <h1 class="KatWhiteTitle text-center">Our coming Weinverkostungs-Events</h1> 
 
 <div class = "row row-cols-4">
@@ -68,6 +72,7 @@
 <br>
 <br>
 
+{# Events Konzerte  #}
 <h1 class="KatWeinTitle text-center">Our coming Konzert-Events</h1> 
 
 <div class = "row row-cols-4">
@@ -94,6 +99,7 @@
 <br>
 <br>
 
+{# Live-Events  #}
 <h1 class="KatWeinTitle text-center">Our coming Live-Events</h1> 
 
 <div class = "row row-cols-4">
@@ -117,5 +123,28 @@
         {% endfor %}
 </div>
 
+{# Walk-Events  #}
+<h1 class="KatWhiteTitle text-center">Our coming Walk-Events</h1> 
+
+<div class = "row row-cols-4">
+        {% for Walk in Walks %}
+            <div>    
+                <div class="card ms-3" style="width: 18rem;">
+                        <img src="{{ Walk.eventImage }}" alt="Girl in a jacket" >
+                        <div class="card-body">
+                            <h5 class="card-title">{{ Walk.eventName }}</h5>
+                            <p class="card-text">Date: {{ Walk.eventDatetime ? Walk.eventDatetime|date('F, d Y H:i') : '' }}</p>
+                            <a class = "btn btn-info" href="{{ path('app_events_show', {'id': Walk.id}) }}">show</a>
+                            {# <a class = "btn btn-warning" href="{{ path('app_events_edit', {'id': eventLive.id}) }}">edit</a> #}
+
+                        </div>
+                    </div>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+</div>
 
 {% endblock %}

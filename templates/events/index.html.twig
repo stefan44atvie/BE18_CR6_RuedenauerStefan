@@ -8,9 +8,17 @@
 
 {% block body %}
 <div class = "container">    
-        <h1 class="wave">Events index</h1>
+        <h1 class="wave">Events in our city</h1>
 </div>
+<div class = "welcomebox opacity_dark50">
+    <p>
+        Hello there, welcome to our great Events page. Here you can discover all the 
+        interesting upcoming events in our city? You can have a list of all existing events, 
+        also you find listings by each category by scolling down this page. If you know an event, 
+        which isn't listed here yet, feel free to add it to our database. 
+    </p>
 
+</div>
 <div class = "row row-cols-4">
     {% for event in events %}
     <div>    
@@ -20,7 +28,7 @@
                     <h5 class="card-title">{{ event.eventName }}</h5>
                     <p class="card-text">Date: {{ event.eventDatetime ? event.eventDatetime|date('F, d Y H:i') : '' }}</p>
                     <a class = "btn btn-info" href="{{ path('app_events_show', {'id': event.id}) }}">show</a>
-                    <a class = "btn btn-warning" href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a>
+                    {# <a class = "btn btn-warning" href="{{ path('app_events_edit', {'id': event.id}) }}">edit</a> #}
 
                 </div>
             </div>
@@ -31,6 +39,84 @@
         </tr>
     {% endfor %}
 </div>
+
+<br>
+
+<h1 class="KatWhiteTitle text-center">Our coming Weinverkostungs-Events</h1> 
+
+<div class = "row row-cols-4">
+        {% for eventWein in eventWeine %}
+            <div>    
+                <div class="card ms-3" style="width: 18rem;">
+                        <img src="{{ eventWein.eventImage }}" alt="Girl in a jacket" >
+                        <div class="card-body">
+                            <h5 class="card-title">{{ eventWein.eventName }}</h5>
+                            <p class="card-text">Date: {{ eventWein.eventDatetime ? eventWein.eventDatetime|date('F, d Y H:i') : '' }}</p>
+                            <a class = "btn btn-info" href="{{ path('app_events_show', {'id': eventWein.id}) }}">show</a>
+                            {# <a class = "btn btn-warning" href="{{ path('app_events_edit', {'id': eventWein.id}) }}">edit</a> #}
+
+                        </div>
+                    </div>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+</div>
+
+<br>
+<br>
+
+<h1 class="KatWeinTitle text-center">Our coming Konzert-Events</h1> 
+
+<div class = "row row-cols-4">
+        {% for Konzert in Konzerte %}
+            <div>    
+                <div class="card ms-3" style="width: 18rem;">
+                        <img src="{{ Konzert.eventImage }}" alt="Girl in a jacket" >
+                        <div class="card-body">
+                            <h5 class="card-title">{{ Konzert.eventName }}</h5>
+                            <p class="card-text">Date: {{ Konzert.eventDatetime ? Konzert.eventDatetime|date('F, d Y H:i') : '' }}</p>
+                            <a class = "btn btn-info" href="{{ path('app_events_show', {'id': Konzert.id}) }}">show</a>
+                            {# <a class = "btn btn-warning" href="{{ path('app_events_edit', {'id': Konzert.id}) }}">edit</a> #}
+
+                        </div>
+                    </div>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+</div>
+
+<br>
+<br>
+
+<h1 class="KatWeinTitle text-center">Our coming Live-Events</h1> 
+
+<div class = "row row-cols-4">
+        {% for eventLive in eventLives %}
+            <div>    
+                <div class="card ms-3" style="width: 18rem;">
+                        <img src="{{ eventLive.eventImage }}" alt="Girl in a jacket" >
+                        <div class="card-body">
+                            <h5 class="card-title">{{ eventLive.eventName }}</h5>
+                            <p class="card-text">Date: {{ eventLive.eventDatetime ? eventLive.eventDatetime|date('F, d Y H:i') : '' }}</p>
+                            <a class = "btn btn-info" href="{{ path('app_events_show', {'id': eventLive.id}) }}">show</a>
+                            {# <a class = "btn btn-warning" href="{{ path('app_events_edit', {'id': eventLive.id}) }}">edit</a> #}
+
+                        </div>
+                    </div>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="12">no records found</td>
+            </tr>
+        {% endfor %}
+</div>
+
 <a href="{{ path('app_events_new') }}">Create new</a>
 
 
